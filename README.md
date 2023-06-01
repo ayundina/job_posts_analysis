@@ -12,12 +12,12 @@ We can scrape the job results based on request query and filter by location and 
 
 ```python
 params = {
-      "query": "Data Scientist",,
-      "location": "Netherlands",
-      "hl": "en",
-      "start": 0,
-      "engine": "google_jobs"
-  }
+    "query": "Data Scientist",
+    "location": "Netherlands",
+    "hl": "en",
+    "start": 0,
+    "engine": "google_jobs"
+}
 ```
 The library for scraping is [SerpApi](https://serpapi.com/)
 ```python
@@ -26,9 +26,22 @@ from serpapi import GoogleSearch
 client = GoogleSearch(params)
 response = client.get_dict()
 ```
-Which returns...
+Which returns:
 ```python
-{}
+"jobs_results": [
+    {
+        "title": "Graduate Data Scientist",
+        "company_name": "Optiver",
+        "location": "Amsterdam, Netherlands",
+        "description": "Can you solve this puzzle?...",
+    },
+    {
+        "title": "Data Scientist",
+        "company_name": "Adyen",
+        "location": "Amsterdam, Netherlands",
+        "description": "Adyen provides payments, data, and financial products..."
+    }
+]
 ```
 
 ## **2. Extracting phrases**
@@ -38,9 +51,9 @@ For the phrase extraction task, multiple plug-and-play approaches were tried and
 import openai
 
 response = openai.ChatCompletion.create(
-  model="gpt-3.5-turbo",
-  messages=prompts_and_replies
-  )
+    model="gpt-3.5-turbo",
+    messages=prompts_and_replies
+)
 ```
 Where ```prompts_and_replies``` are natural language instructions followed by the text to process. In our case, it's a job description:
 ```python
@@ -59,40 +72,41 @@ Who you are
 Where extracted keywords will look like this:
 ```python
 skills = {
-  'EDU': {
-    'ma',
-    'msc',
-    'phd'
+    "EDU": {
+        "ma",
+        "msc",
+        "phd"
     },
-  'EXP': {
-    '3+'
+    "EXP": {
+        "3+"
     },
-  'TOOL': {
-    'airflow',
-    'tensorflow',
-    'spark',
-    'pandas',
-    'scikit-learn',
-    'pytorch',
-    'sql',
-    'xgboost'
+    "TOOL": {
+        "airflow",
+        "tensorflow",
+        "spark",
+        "pandas",
+        "scikit-learn",
+        "pytorch",
+        "sql",
+        "xgboost"
     },
-  'TECH': {
-    'statistical mindset',
-    'machine learning',
-    'p-value',
-    'computer science',
-    'physics',
-    'a/b testing',
-    'bioinformatics',
-    'statistics',
-    'data science',
-    'big data framework',
-    'confidence',
-    'econometrics',
-    'mathematics',
-    'bayesian'
-    }}
+    "TECH": {
+        "statistical mindset",
+        "machine learning",
+        "p-value",
+        "computer science",
+        "physics",
+        "a/b testing",
+        "bioinformatics",
+        "statistics",
+        "data science",
+        "big data framework",
+        "confidence",
+        "econometrics",
+        "mathematics",
+        "bayesian"
+    }
+}
 ```
 
 ## **3. Visualisation**
