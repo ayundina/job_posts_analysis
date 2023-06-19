@@ -1,11 +1,11 @@
-# **Most common requirements of Data Science vacancies**
+# Most common requirements of Data Science vacancies
 
 In this project:
 1. Scrape vacancies in the Netherlands
 2. Extract key phrases related to education level, experience, tools, and technologies
 3. Visualize the findings
 
-## **1. Scraping**
+## Scraping
 
 Google Jobs collects information from the internet about open positions.
 We can scrape the job results based on request query and filter by location and language.
@@ -44,7 +44,7 @@ Which returns:
 ]
 ```
 
-## **2. Extracting phrases**
+## Extracting phrases
 
 For the phrase extraction task, multiple plug-and-play approaches were tried and tested. For example, pre-trained models from spacy with pytextrank, transformers, and openai. Openai can be prompted to extract and group phrases from the given text:
 ```python
@@ -109,7 +109,12 @@ skills = {
 }
 ```
 
-## **3. Visualisation**
+## Visualisation
 
-Finally! Combining, counting, sorting, and visualizing the results gives us bar plots with the most required skills and experience in the Data Science industry.
+Finally! Combining, counting, sorting, and visualizing the results gives us bar plots with the most required skills and experience in the Data Science industry.\
+\
 ![data_science_requirements.png](https://github.com/ayundina/job_posts_analysis/blob/main/data_science_requirements.png)
+
+## Polishing
+
+As rightly noticed, the results require more cleaning and filtering... This project is an initial attempt to see what is what in the Data Science field. In the current state, it roughly outlines the most popular requirements. 
