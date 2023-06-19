@@ -112,6 +112,4 @@ skills = {
 ## **3. Visualisation**
 
 Finally! Combining, counting, sorting, and visualizing the results gives us bar plots with the most required skills and experience in the Data Science industry.
-```python
-...
-```
+![data_science_requirements.png](https://github.com/ayundina/job_posts_analysis/blob/main/data_science_requirements.png)
